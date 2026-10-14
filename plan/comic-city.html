@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comic City Plan</title>
+<link rel="stylesheet" href="comic-city/page.css">
+<link rel="stylesheet" href="comic-city/try.css">
+<link rel="preload" as="image" href="comic-city/cut/day-1.png">
+<link rel="preload" as="image" href="comic-city/cut/day-2.png">
+<link rel="preload" as="image" href="comic-city/cut/day-3.png">
+<link rel="preload" as="image" href="comic-city/cut/day-4.png">
+<link rel="preload" as="image" href="comic-city/cut/day-5.png">
+<link rel="preload" as="image" href="comic-city/cut/day-6.png">
+</head><body><div style="max-width:1120px;margin:0 auto;padding:12px 16px 0;font:700 14px/1.3 system-ui,sans-serif"><a href="../index.html" style="display:inline-block;padding:7px 14px;border-radius:999px;background:#3B2A4A;color:#fff;text-decoration:none">← All plans</a></div><div class="page">
+<header class="hero">
+  <div class="crumb">New maths app · a new plan: Comic City · 14 October 2026 · nothing built yet</div>
+  <h1>Comic City: every child is a superhero</h1>
+  <p class="lede">A maths app for children aged 3 to 10, told as <b>an interactive comic</b> in which the child is the hero. Every day is a new
+  episode: a call for help comes in, a team of young heroes needs the child's maths, and the comic page itself is where the maths happens. Panels
+  are groups, a long panel is a number line, panels in a row are time, and the page turn shows whether the answer works. Each finished day
+  becomes an issue of the child's own comic, with their hero on the cover.</p>
+  <div class="note">The careful learning rules are the same as in the <a href="the-plan.html">first plan</a> (a map of small skills with stars, five
+  steps for every skill, the feedback rules, reviews, a parents' page). Everything the child sees and does is new: the world, the heroes, the day,
+  the challenge, speed and the activities. The pictures are Gemini drafts; the storyboards are mock-ups.</div>
+  <figure class="shot"><img src="comic-city/sb/home-1.jpg" alt="Comic City home: headquarters cut open like a doll&#x27;s house; the child&#x27;s hero in the big room under a screen showing today&#x27;s episode; the searchlight throws the child&#x27;s emblem into the sky" loading="lazy"><figcaption><b>Home: Hero HQ.</b> Headquarters, cut open like a doll's house. The big screen shows today's episode; every room is a door (the Costume Room, the comic shelf, the Colour Lab, training, and speed on the roof).</figcaption></figure>
+  <nav class="toc"><a href="#look">The look</a><a href="#idea">The big idea</a><a href="#try">Try it</a><a href="#cast">The heroes</a>
+    <a href="#day">A day</a><a href="#challenge">The daily challenge</a><a href="#speed">Speed</a><a href="#activities">Activities</a>
+    <a href="#rewards">Rewards</a><a href="#build">Building it</a><a href="#questions">Questions</a><a href="comic-city-technical.html">Technical page →</a></nav>
+</header>
+
+<section id="look">
+<span class="eyebrow">1 · The look</span>
+<h2>A bright, friendly superhero comic</h2>
+<figure class="shot"><img src="comic-city/img/k-team2.jpg" alt="The six young heroes in a row, inked comic style: Dot in yellow, Zip in red, Echo in purple, Poly in green, Tock in blue, Mega in orange" loading="lazy"><figcaption><b>Inked comic, made for children.</b> Thick hand-inked outlines, flat bright colours, a little halftone dot shading, speech bubbles and sound-effect words. Friendly, never scary: no fighting, nobody gets hurt.</figcaption></figure>
+<div class="three big3">
+<div class="card"><div class="ic">🦸</div><h3>Children want to be heroes</h3><p>From 3 to 10, children play superheroes. Here the child's own hero joins
+the team, gets a name and a costume, and stars on the cover of every issue.</p></div>
+<div class="card"><div class="ic">🧩</div><h3>Easy to bring to life</h3><p>Bold outlines and flat colours come apart cleanly into pieces (head, arms,
+legs, cape), so characters are rigged and animated, not drawn frame by frame.</p></div>
+<div class="card"><div class="ic">📏</div><h3>Exact where it matters</h3><p>Panels, clocks, rooftops, paint tubes and stickers are drawn by the app in the
+same inked look, so every count, time and colour is exact and changes every round.</p></div>
+</div>
+<div class="swatches"><div><i style="background-color:#1B1B2F"></i><span><b>Ink</b><br>#1B1B2F</span></div><div><i style="background-color:#FFF8E6"></i><span><b>Paper</b><br>#FFF8E6</span></div><div><i style="background-color:#E8382F"></i><span><b>Hero red</b><br>#E8382F</span></div><div><i style="background-color:#FFD23F"></i><span><b>Signal yellow</b><br>#FFD23F</span></div><div><i style="background-color:#2F7DE1"></i><span><b>Sky blue</b><br>#2F7DE1</span></div><div><i style="background-color:#8B4FD8"></i><span><b>Echo purple</b><br>#8B4FD8</span></div><div><i style="background-color:#3DBE5A"></i><span><b>Poly green</b><br>#3DBE5A</span></div><div><i style="background-color:#FF8A1F"></i><span><b>Mega orange</b><br>#FF8A1F</span></div><div><i style="background-color:#FF6FA8"></i><span><b>Pop pink</b><br>#FF6FA8</span></div><div><i style="background-color:#7FD3FF"></i><span><b>Daylight</b><br>#7FD3FF</span></div></div>
+<p class="small soft">Titles and sound effects in <b>Bangers</b>, speech in <b>Comic Neue</b>, every number in <b>Fredoka</b> (round, with a plain 0),
+reading on these pages in <b>Nunito</b>. Every speech bubble is read aloud. Ages 8–10 get calmer pages with more room for the working.</p>
+</section>
+
+<section id="idea">
+<span class="eyebrow">2 · The big idea</span>
+<h2>The comic page is the maths</h2>
+<p>A comic page is already a maths picture: panels are groups, a row of panels is time passing, a gutter is a line that things cross. Comic City
+uses this. Each activity is a page whose panels <i>are</i> the maths the child is learning, and the page turn is how the world tests an answer.</p>
+<div class="powers"><div class="card"><div class="ic">💡</div><h3>Light up to count</h3><p>Each thing tapped lights up with its number, so nothing is counted twice.</p><p class="alt"><b>In:</b> Kitten Rescue</p></div><div class="card"><div class="ic">↔️</div><h3>Cross the gutter</h3><p>Things move from panel to panel: into the basket is adding, out of the panel is taking away.</p><p class="alt"><b>In:</b> Kitten Rescue, Sticker Pack</p></div><div class="card"><div class="ic">📄</div><h3>Copy a panel</h3><p>A panel copied 4 times is 4 groups; rows of panels are an array.</p><p class="alt"><b>In:</b> Echo&#x27;s Copies</p></div><div class="card"><div class="ic">✂️</div><h3>Split into equal parts</h3><p>Swipes cut a tube into equal parts; each part is a fraction you can pour.</p><p class="alt"><b>In:</b> Colour Lab</p></div><div class="card"><div class="ic">🏙️</div><h3>One long panel</h3><p>A wide panel that slides sideways is a number line to hop along.</p><p class="alt"><b>In:</b> Rooftop Hops</p></div><div class="card"><div class="ic">🎞️</div><h3>Panels in a row are time</h3><p>First, next, last; one panel is five minutes.</p><p class="alt"><b>In:</b> Clock Tower</p></div><div class="card"><div class="ic">📦</div><h3>Pack ten into one</h3><p>Ten loose stickers make a strip, ten strips a sheet: place value.</p><p class="alt"><b>In:</b> Sticker Pack</p></div><div class="card"><div class="ic">📖</div><h3>Turn the page to find out</h3><p>The child chooses or predicts; the page turn shows what really happens.</p><p class="alt"><b>In:</b> Missing Pieces, Rooftop Hops</p></div></div>
+<h3>Four rules that make it creative</h3>
+<div class="two">
+<div class="card"><h3>1 · You are the hero</h3><p>The child's hero is in every episode: on the map, in the finales, on the cover. Friends never
+give the answer: they react, and when the child is stuck they give a thinking tip.</p></div>
+<div class="card"><h3>2 · Make it, then turn the page</h3><p>The child builds or predicts, and the page turn shows what really happens: the kart rolls,
+Zip lands on his roof, the suit turns the mixed colour.</p></div>
+<div class="card"><h3>3 · The scene answers a wrong try</h3><p>A wrong answer has a funny result, never a mark: Mum cat looks for a kitten that is not
+there, the ball rolls away, the ice-cream van has gone home, the suit turns tomato red. Never red, never "wrong"; the try stays; after a second
+miss the working is shown. Stars count first tries only.</p></div>
+<div class="card"><h3>4 · Many right answers</h3><p>Every way to make 12, the cube or the long box, any colour from the right fractions: the app
+keeps every way the child finds, and the heroes react to each.</p></div>
+</div>
+</section>
+
+<section id="try">
+<span class="eyebrow">Try it</span>
+<h2>Three panel powers to play with</h2>
+<p>These little demos run right here on the page, with a mouse or a finger. They are sketches of the idea, not the app.</p>
+<div class="try" data-try="copies"></div>
+<div class="try" data-try="mix"></div>
+<div class="try" data-try="clock" data-base="comic-city/"></div>
+</section>
+
+<section id="cast">
+<span class="eyebrow">3 · The heroes</span>
+<h2>Six young heroes, one rascal, and you</h2>
+<p>Each hero's power is a kind of maths. They are children too, from about 5 (Dot) to 10 (Mega), so every child can find one like them.</p>
+<div class="cast"><div class="card"><img src="comic-city/thumb/dot-cheer.png" alt="Dot"><div><h3>Dot</h3>
+  <p>The smallest hero, about 5. Her fingertip glows: whatever she touches lights up with its number.</p><p><b>Helps with:</b> counting with the youngest (Kitten Rescue, Flash Dots).</p></div></div><div class="card"><img src="comic-city/thumb/zip-cheer.png" alt="Zip"><div><h3>Zip</h3>
+  <p>The fastest boy in the city, always running. Coaches speed on the roof of headquarters.</p><p><b>Helps with:</b> adding and taking away (Rooftop Hops), speed (Speed Training, Bubble Pop).</p></div></div><div class="card"><img src="comic-city/thumb/echo-cheer.png" alt="Echo"><div><h3>Echo</h3>
+  <p>Can make copies of herself, and every copy carries the same.</p><p><b>Helps with:</b> multiplying and dividing (Echo&#x27;s Copies).</p></div></div><div class="card"><img src="comic-city/thumb/poly-cheer.png" alt="Poly"><div><h3>Poly</h3>
+  <p>Turns into any shape, flat or solid. Runs the Colour Lab.</p><p><b>Helps with:</b> shapes and fractions (Missing Pieces, Colour Lab).</p></div></div><div class="card"><img src="comic-city/thumb/tock-cheer.png" alt="Tock"><div><h3>Tock</h3>
+  <p>Wears the city&#x27;s biggest wristwatch; her clock badge keeps the town on time.</p><p><b>Helps with:</b> time (Clock Tower).</p></div></div><div class="card"><img src="comic-city/thumb/mega-cheer.png" alt="Mega"><div><h3>Mega</h3>
+  <p>The biggest and gentlest hero, about 10. Grows ten times bigger, and back.</p><p><b>Helps with:</b> big numbers and place value (Sticker Pack).</p></div></div></div>
+<div class="two">
+<figure class="shot"><img src="comic-city/img/k-muddle2.jpg" alt="Muddle, a funny rascal with wild purple hair, goggles and a swirly coat, laughing, sulking and pointing, and his little purple flying mixer" loading="lazy"><figcaption><b>Muddle</b> and his flying mixer. A harmless rascal who mixes things up: the clock, the shop signs, the cakes. He never fights; when everything is fixed he sulks, then laughs: "Next time!"</figcaption></figure>
+<figure class="shot"><img src="comic-city/img/k-poly-shapes.jpg" alt="Poly as seven green solid shapes with his mask: a ball, a cube, a standing cylinder, a cylinder on its side, a cone, a pyramid and a long box" loading="lazy"><figcaption><b>Poly's shapes.</b> Poly turns into any shape the child picks, always with his mask, so a 4-year-old knows it is still him.</figcaption></figure>
+</div>
+<div class="two">
+<figure class="shot"><img src="comic-city/img/k-kids.jpg" alt="Six children in plain grey rookie hero suits, with different skin tones and hair, one girl in a pink hijab" loading="lazy"><figcaption><b>You.</b> The child picks a rookie hero (skin, hair and face are always free) and gives them a hero name from two spoken lists, such as Captain Star.</figcaption></figure>
+<figure class="shot"><img src="comic-city/sb/sb-extras-2.jpg" alt="The Costume Room: the child&#x27;s hero in a red suit and yellow cape, beside a shop of capes, masks, boots, gloves, a helmet, a belt and a rocket pack with coin prices" loading="lazy"><figcaption><b>The Costume Room.</b> Capes, masks, boots and gadgets for coins; every piece fits every hero. The suit's colour can be one the child mixed in the Colour Lab.</figcaption></figure>
+</div>
+</section>
+
+<section id="day">
+<span class="eyebrow">4 · A day</span>
+<h2>Today's episode</h2>
+<p>Every day the Hero Signal lights up: a short warm-up, then <b>three calls for help</b> on the city map, which the child answers in any order (the
+app chooses them: one skill to remember, one new power, one to practise), and finally Muddle's Mix-up. About 9 to 13 minutes, depending on age.
+Today's page colours in as the child goes: pencil sketches become inked, then coloured.</p>
+<div class="two">
+<figure class="shot"><a href="comic-city-day.html"><img src="comic-city/sb/sb-day-2.jpg" alt="The city map with three calls for help: kittens, the clock, kites" loading="lazy"></a><figcaption><b>Three calls for help.</b> The child picks the order; the strip at the top is today's page.</figcaption></figure>
+<figure class="shot"><a href="comic-city-day.html"><img src="comic-city/sb/sb-day-4.jpg" alt="Today&#x27;s page: three panels in colour, one inked, two still pencil sketches" loading="lazy"></a><figcaption><b>The page colours in.</b> Done: colour. Playing: ink. Not yet: pencil.</figcaption></figure>
+</div>
+<p><a href="comic-city-day.html">The whole day, with its storyboard and timings →</a></p>
+</section>
+
+<section id="challenge">
+<span class="eyebrow">5 · The daily challenge</span>
+<h2>Muddle's Mix-up</h2>
+<p>The episode ends with one big page of the city, washed in Muddle's purple, with <b>ten things he muddled</b>: cakes cut unfairly, a shop sign with
+the wrong number, the bus-stop clock. The child fixes them in any order, and each fixed spot gets its colour back. Small, middle and big muddles
+are worth 1, 2 and 3 points (17 in all); only first tries score. The finished page is the last page of the day's issue.</p>
+<div class="two">
+<figure class="shot"><a href="comic-city-day.html"><img src="comic-city/sb/sb-mixup-1.jpg" alt="A street washed in purple with ten swirls marking ten muddles; Muddle laughs on a rooftop" loading="lazy"></a><figcaption><b>Ten muddles.</b> Any order, small or big first.</figcaption></figure>
+<figure class="shot"><a href="comic-city-day.html"><img src="comic-city/sb/sb-day-6.jpg" alt="Issue 24 on the comic shelf, with the child&#x27;s hero on the cover, beside six earlier issues" loading="lazy"></a><figcaption><b>The issue.</b> Every day becomes an issue with the child's hero on the cover.</figcaption></figure>
+</div>
+</section>
+
+<section id="speed">
+<span class="eyebrow">6 · Speed</span>
+<h2>Zip's Speed Training</h2>
+<p>The daily warm-up is a run across the city's rooftops with facts the child already knows: every right answer is one leap. A see-through
+<b>afterimage</b> of the child's own best run runs alongside. Each family of facts has a <b>speed rank</b> (Rookie, Sidekick, Hero, Super Hero,
+Lightning), and the <b>Power Grid</b> shows each times fact turning gold when it is quick and sure on three different days. The fact stays still and
+the pad never moves; there is no clock under 8, and no ranking against other children.</p>
+<div class="two">
+<figure class="shot"><a href="comic-city-speed.html"><img src="comic-city/sb/sb-speed-2.jpg" alt="The rooftop run at sunset: the hero leaping, the afterimage behind, the fact 8 + 5 = 13 and a number pad" loading="lazy"></a><figcaption><b>The run.</b> Only the runner moves.</figcaption></figure>
+<figure class="shot"><a href="comic-city-speed.html"><img src="comic-city/sb/sb-speed-6.jpg" alt="The Power Grid: a 10 by 10 times table of squares, gold, blue and grey" loading="lazy"></a><figcaption><b>The Power Grid.</b> Gold: quick and sure. Blue: learning. Grey: not met yet.</figcaption></figure>
+</div>
+<p><a href="comic-city-speed.html">Speed in full, with Flash Dots and Bubble Pop →</a></p>
+</section>
+
+<section id="activities">
+<span class="eyebrow">7 · The activities</span>
+<h2>Seven activities, each with a storyboard</h2>
+<p>From age 3 to 10, each with its own hero and panel power. Every page shows six moments, including a wrong try, and the rounds, ages and planned mistakes.</p>
+<div class="acts"><a href="comic-city-kitten-rescue.html"><img src="comic-city/sb/sb-kittens-2.jpg" alt="" loading="lazy"><div><span class="tag age">Pre-K–K · ages 3–5</span>
+    <h3>Kitten Rescue</h3><p>Kittens are stuck up a tree.</p><p class="small"><b>Hero:</b> Dot</p></div></a><a href="comic-city-missing-pieces.html"><img src="comic-city/sb/sb-pieces-3.jpg" alt="" loading="lazy"><div><span class="tag age">Pre-K–Grade 1 · ages 4–7</span>
+    <h3>Missing Pieces</h3><p>Muddle took the missing pieces of the playground: a wheel from the kart, the step up to a stuck kite, the roof of the tower, the football.</p><p class="small"><b>Hero:</b> Poly</p></div></a><a href="comic-city-rooftop-hops.html"><img src="comic-city/sb/sb-hops-2.jpg" alt="" loading="lazy"><div><span class="tag age">Grades K–2 · ages 5–7</span>
+    <h3>Rooftop Hops</h3><p>The wind blew the kites onto the city&#x27;s rooftops.</p><p class="small"><b>Hero:</b> Zip</p></div></a><a href="comic-city-clock-tower.html"><img src="comic-city/sb/sb-clock-4.jpg" alt="" loading="lazy"><div><span class="tag age">Grades K–3 · ages 5–9</span>
+    <h3>Clock Tower</h3><p>Muddle spun the town clock and mixed up the whole day.</p><p class="small"><b>Hero:</b> Tock</p></div></a><a href="comic-city-echos-copies.html"><img src="comic-city/sb/sb-copies-2.jpg" alt="" loading="lazy"><div><span class="tag age">Grades 1–4 · ages 6–9</span>
+    <h3>Echo&#x27;s Copies</h3><p>Echo can make copies of herself, and in a comic each copy needs a panel.</p><p class="small"><b>Hero:</b> Echo</p></div></a><a href="comic-city-colour-lab.html"><img src="comic-city/sb/sb-colour-4.jpg" alt="" loading="lazy"><div><span class="tag age">Grades 2–5 · ages 7–10</span>
+    <h3>Colour Lab</h3><p>Every hero&#x27;s suit colour is a fraction recipe, mixed in the Colour Lab at headquarters.</p><p class="small"><b>Hero:</b> Poly</p></div></a><a href="comic-city-sticker-pack.html"><img src="comic-city/sb/sb-stickers-2.jpg" alt="" loading="lazy"><div><span class="tag age">Grades 2–5 · ages 7–10</span>
+    <h3>Sticker Pack</h3><p>Muddle jammed the sticker factory, and the stickers came out loose.</p><p class="small"><b>Hero:</b> Mega</p></div></a></div>
+</section>
+
+<section id="rewards">
+<span class="eyebrow">8 · Rewards</span>
+<h2>Your own comic, your own costume</h2>
+<div class="three">
+<div class="card"><h3>📚 The comic shelf</h3><p>One issue a day, with the child's hero on the cover, the day's title and stars. Over a month the shelf fills;
+a month makes a volume with a special cover. Nothing on it can be bought.</p></div>
+<div class="card"><h3>🦸 The Costume Room</h3><p>Coins for each part of the episode (about 45 a day, 55 at most) buy capes, masks, boots and gadgets.
+Skin, hair and face are always free. No mystery boxes, nothing expires, and nothing bought makes the maths easier.</p></div>
+<div class="card"><h3>📘 The Power Book</h3><p>Every skill is a panel in the hero's Power Book: pencil when started, inked when the child can do it alone,
+coloured when it is still there a week later.</p></div>
+</div>
+<div class="two">
+<figure class="shot"><img src="comic-city/sb/sb-extras-1.jpg" alt="The Power Book: six powers, each a strip of skill panels in yellow, white or pencil" loading="lazy"><figcaption><b>The Power Book</b> is the map of skills, in school order, for the child and for parents.</figcaption></figure>
+<figure class="shot"><img src="comic-city/sb/sb-extras-6.jpg" alt="Make a page: the child&#x27;s own two-panel comic about kittens, with a question, and a Send to Grandma button" loading="lazy"><figcaption><b>Later: Make a page.</b> The child makes a comic page with a maths question and sends it to a grown-up in the family to answer.</figcaption></figure>
+</div>
+<p class="small soft">Parents get a separate page: skills learned, first tries, where help was needed, gold facts and time spent.</p>
+</section>
+
+<section id="build">
+<span class="eyebrow">9 · Building it</span>
+<h2>A small preview first</h2>
+<div class="wrap"><table class="t"><tr><th>Step</th><th>What</th><th>Roughly</th></tr><tr><td><b>0 · A playable preview</b> <span class="tag mine">my pick</span></td><td>Hero HQ and one episode: three missions, one per age (<b>Kitten Rescue</b>, <b>Clock Tower</b> and <b>Echo's Copies</b>), Muddle's Mix-up, Zip's Speed Training, the issue on the shelf; Echo rigged; the avatar with a dozen costume pieces; in a tablet's browser.</td><td>2–3 weeks</td></tr><tr><td>1 · The pilot</td><td>The other four activities, the skill map from Pre-K to Grade 2 plus the 2, 5 and 10 times tables, 30 episodes from parts, the Costume Room, the Power Book, the parents' page.</td><td>8–12 weeks</td></tr><tr><td>2 · Everything else</td><td>More activities wave by wave, up to Grade 5, as in the first plan.</td><td>months</td></tr><tr><td>3 · Accounts and phones</td><td>Sign-in and progress on every device, then iPhone and Android apps from the same code.</td><td>after the pilot</td></tr></table></div>
+<div class="pickbox"><b>Three things the preview must prove:</b> children understand panels, gutters and page turns without being told (watch five
+children aged 3 to 9); the page turn feels exciting, not slow (under 2 seconds); and a new episode every day can be put together from parts, without
+drawing a new page each day.</div>
+</section>
+
+<section id="questions">
+<span class="eyebrow">10 · Your answers</span>
+<h2>Questions</h2>
+<div class="ask"><ol class="q"><li><b>The comic look:</b> right for the client, and for children from 3 to 10?</li><li><b>The heroes and Muddle</b> (Dot, Zip, Echo, Poly, Tock, Mega): keep, change or add? Are the names right?</li><li><b>The panel powers:</b> which feel strongest? Any you would drop? (Try the three demos above.)</li><li><b>The activities:</b> which three should the preview have? (My pick: Kitten Rescue, Clock Tower and Echo's Copies.) Each page has one more question.</li><li><b>The day:</b> an episode with three calls for help in any order, as here? (<a href="comic-city-day.html">the day</a>)</li><li><b>The daily challenge:</b> Muddle's Mix-up, ten muddles on one page? (<a href="comic-city-day.html">the day</a>)</li><li><b>Speed:</b> Zip's rooftop run with the afterimage, ranks for each family of facts and the Power Grid? (<a href="comic-city-speed.html">speed</a>)</li><li><b>Rewards:</b> an issue a day with the child's hero on the cover, costumes for coins, the Power Book: the right balance?</li><li><b>Which plan to take forward:</b> the first plan, Paper Town, Clay Bay, Comic City, or a mix?</li><li><b>First step:</b> the 2–3 week preview as described?</li></ol></div>
+<p class="foot">14 October 2026 · E:\work\new-math-app. Pictures are drafts made with Gemini; storyboards and mock-up screens are HTML
+(docs/plan/comic-city/mock/).</p>
+</section>
+<script src="comic-city/try.js"></script>
+</div></body></html>

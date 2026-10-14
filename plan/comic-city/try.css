@@ -1,0 +1,70 @@
+/* Fonts and palette come from page.css; all demo styles stay inside .try. */
+.try{position:relative;min-width:0;margin:28px 6px 32px 0;padding:16px 20px;background:var(--white);border:3px solid var(--ink);border-radius:0;box-shadow:6px 6px 0 var(--ink);font:700 18px/1.35 'Comic Neue',sans-serif;color:var(--ink)}
+.try *{box-sizing:border-box}
+.try .try-caption{display:table;max-width:100%;margin:-19px 0 10px -23px;padding:8px 14px;background:var(--yellow);border:3px solid var(--ink);font:400 19px/1.1 Bangers,sans-serif;letter-spacing:1px}
+.try p{margin:0}
+.try .try-hint{margin:0 0 10px}
+.try .try-number{font-family:Fredoka,sans-serif;font-weight:700}
+.try .try-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 4px 6px 0}
+.try .try-button{min-width:46px;min-height:46px;padding:7px 16px;border:3px solid var(--ink);border-radius:12px;background:var(--blue);box-shadow:4px 4px 0 var(--ink);color:var(--white);font:400 22px/1.15 Bangers,sans-serif;letter-spacing:.5px;-webkit-text-stroke:.7px var(--ink);paint-order:stroke fill;text-shadow:1px 1px var(--ink),-1px -1px var(--ink);cursor:pointer;touch-action:manipulation}
+.try .try-button[data-action=copy]{min-width:110px;background:var(--purple);font-size:26px}
+.try .try-button[data-action=undo]{background:var(--red)}
+.try .try-button:active{transform:translateY(3px);box-shadow:none}
+.try .try-button:disabled{opacity:.45;cursor:default}
+.try .try-button[aria-pressed=true]{background:var(--purple)}
+.try .try-button:focus-visible,.try .try-tube-part:focus-visible{outline:3px solid var(--blue);outline-offset:6px}
+.try .try-count{min-width:18px;text-align:center;font-size:25px}
+.try .try-panels{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.try .try-copy-panel{flex:0 0 110px;width:110px;height:130px;border:3px solid var(--ink);background-color:var(--purple);background-image:radial-gradient(circle,#58328C 1.5px,transparent 2px);background-size:9px 9px}
+.try .try-copy-panel svg{display:block;width:100%;height:100%}
+.try .try-pop{animation:try-copy-pop 200ms ease-out}
+@keyframes try-copy-pop{from{transform:scale(.6)}to{transform:scale(1)}}
+.try .try-total-row{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin:4px 0 8px}
+.try .try-total{font-size:clamp(23px,3vw,36px);line-height:1.2}
+.try .try-party{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:70px;padding:16px 20px;background:var(--yellow);clip-path:polygon(0 20%,14% 20%,12% 0,29% 12%,40% 0,50% 12%,68% 0,74% 16%,94% 8%,90% 30%,100% 40%,92% 55%,100% 77%,83% 79%,86% 100%,66% 87%,54% 100%,42% 88%,21% 100%,22% 81%,0 86%,7% 60%,0 47%,9% 35%);font-size:18px}
+.try [hidden]{display:none!important}
+.try .try-found{font-size:17px}
+.try .try-live{position:absolute;width:1px;height:1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.try .try-lab{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;max-width:720px;margin:0 auto;align-items:center}
+.try .try-tube-wrap{text-align:center}
+.try .try-tube{display:block;width:120px;height:310px;margin:0 auto}
+.try .try-tube-part{cursor:pointer;touch-action:manipulation;outline:none}
+.try .try-tube-part:focus-visible rect{stroke:var(--blue);stroke-width:5;stroke-dasharray:6 3}
+.try .try-cycle{font-size:14px;line-height:1.25}
+.try .try-suit-wrap{text-align:center;min-width:0}
+.try .try-suit{display:block;width:220px;max-width:100%;height:245px;margin:0 auto 10px}
+.try .try-recipe{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;font-size:20px}
+.try .try-ingredient{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.try .try-fraction{display:inline-flex;flex-direction:column;text-align:center;line-height:1.05;min-width:22px;font-size:23px}
+.try .try-fraction>span:first-child{border-bottom:2px solid var(--ink);padding:0 3px 3px}
+.try .try-fraction>span:last-child{padding-top:3px}
+.try .try-same{margin-top:14px;font-size:17px}
+.try .try-target{display:inline-block;padding:4px 10px;background:var(--yellow);border:2px solid var(--ink)}
+.try .try-clock-layout{display:grid;grid-template-columns:minmax(0,310px) minmax(0,280px);justify-content:center;align-items:center;gap:40px}
+.try .try-clock-wrap{text-align:center}
+.try .try-clock{display:block;width:260px;max-width:100%;margin:0 auto 14px;overflow:visible;touch-action:none;user-select:none}
+.try .try-clock text{font-size:22px}
+.try .try-minute-hand{cursor:grab}
+.try .try-minute-hand:active{cursor:grabbing}
+.try .try-clock-controls{justify-content:center;margin-bottom:10px}
+.try .try-time{font-size:38px;line-height:1.2}
+.try .try-time-words{font-size:24px;min-height:33px;margin-top:4px}
+.try .try-day-panel{border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);background:var(--paper)}
+.try .try-day-picture{display:flex;justify-content:center;align-items:center;height:230px;padding:12px;background:white}
+.try .try-day-picture img{width:100%;height:100%;object-fit:contain}
+.try .try-day-name{padding:10px;border-top:3px solid var(--ink);text-align:center;font-size:24px}
+@media(max-width:600px){
+  .try{padding:16px 14px 18px}
+  .try .try-caption{margin:-19px 0 14px -17px;font-size:22px}
+  .try .try-controls{gap:9px}
+  .try .try-controls>span:first-child{flex-basis:100%}
+  .try .try-button{padding:7px 13px}
+  .try .try-lab,.try .try-clock-layout{grid-template-columns:minmax(0,1fr);gap:22px}
+  .try .try-suit{height:210px;width:190px}
+  .try .try-day-panel{width:260px;max-width:100%;margin:0 auto}
+  .try .try-day-picture{height:200px}
+  .try .try-total{font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){.try *{animation:none!important;transition:none!important}}
+/* Claude: the comic font's minus and plus are tiny; these two buttons use the number font */
+.try-button[data-action="less"],.try-button[data-action="more"]{font:700 26px/1 Fredoka,system-ui,sans-serif;-webkit-text-stroke:0;color:var(--white);text-shadow:0 2px 0 var(--ink)}

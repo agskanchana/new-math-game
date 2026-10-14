@@ -1,0 +1,117 @@
+/* Shared plan-page vocabulary, drawn as friendly inked comic panels. */
+@font-face{font-family:Bangers;src:url(fonts/bangers.ttf) format('truetype');font-weight:400 700}
+@font-face{font-family:'Comic Neue';src:url(fonts/comicneue-bold.ttf) format('truetype');font-weight:700}
+@font-face{font-family:Fredoka;src:url(fonts/fredoka-700.woff2) format('woff2');font-weight:700}
+@font-face{font-family:Nunito;src:url(fonts/nunito.ttf) format('truetype');font-weight:200 1000}
+:root{--ink:#1B1B2F;--paper:#FFF8E6;--white:#FFFFFF;--red:#E8382F;--yellow:#FFD23F;--blue:#2F7DE1;--purple:#8B4FD8;--green:#3DBE5A;--orange:#FF8A1F;--pink:#FF6FA8;--sky:#7FD3FF;--lime:#A8E03A;--grey:#A7A9B4;--cream:#FFF1CC;--soft:#555568;--bg:var(--paper);--card:var(--white);--deep:#215DB0;--edge:var(--ink);--pick:var(--cream)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif;background-color:var(--paper);background-image:radial-gradient(circle,rgba(27,27,47,.055) .9px,transparent 1px);background-size:10px 10px}
+a{color:var(--deep);text-underline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.page{max-width:1120px;margin:0 auto;padding:0 22px 80px;overflow-wrap:anywhere}
+header.hero{padding:38px 0 16px}
+.crumb{font:800 14px/1.3 Nunito;color:var(--soft);margin-bottom:10px}
+h1{font:400 clamp(42px,6vw,72px)/1.06 Bangers,system-ui;margin:0 0 12px;letter-spacing:1.4px;color:var(--ink);text-shadow:3px 3px 0 var(--yellow)}
+h2{font:400 clamp(32px,4vw,46px)/1.12 Bangers,system-ui;margin:0 0 10px;letter-spacing:1px}
+h3{font:800 22px/1.25 Nunito,system-ui;margin:18px 0 6px}
+p{margin:0 0 12px}
+.lede{font-size:20px;line-height:1.55;max-width:860px}
+.soft{color:var(--soft)}
+.small{font-size:14.5px}
+section{margin:54px 0 0;padding-top:4px}
+.eyebrow{display:inline-block;font:400 19px/1 Bangers;letter-spacing:1px;color:var(--ink);background:var(--yellow);padding:8px 14px;border:3px solid var(--ink);margin-bottom:12px;transform:rotate(-1deg)}
+.slab,.card,figure,.frame,.acts a,.wrap,.ask{background:var(--white);border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink)}
+figure{position:relative;margin:0;overflow:hidden;border-radius:0}
+figure>img,figure>a>img{width:100%}
+figure>img,figure>a>img,.frame img{border:3px solid var(--ink)}
+figcaption{padding:12px 18px 16px;font-size:15.5px;line-height:1.5;color:var(--soft)}
+figcaption b{color:var(--ink)}
+.shot{margin:22px 0 18px}
+.two,.three,.four,.acts,.board,.cast,.moves,.powers,.swatches{display:grid;margin:18px 0;gap:20px}
+.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.three{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.four{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px}
+.two>*,.three>*,.four>*,.acts>*,.board>*,.cast>*,.moves>*,.powers>*,.swatches>*{min-width:0}
+.card{padding:18px 20px}
+.card h3{margin-top:0}
+.card ul{margin:6px 0 0;padding-left:20px}
+.card li{margin-bottom:4px}
+.card p:last-child{margin-bottom:0}
+.note,.pickbox{border:3px solid var(--ink);border-radius:6px;padding:14px 18px;margin:16px 0}
+.note{background:#E8F5FF;border-left:9px solid var(--blue)}
+.pickbox{background:var(--cream);border-left:9px solid var(--yellow)}
+.wrap{overflow-x:auto;margin:14px 0;max-width:100%}
+table.t{border-collapse:collapse;width:100%;font-size:15.5px;line-height:1.45;table-layout:fixed}
+table.t th,table.t td{padding:11px 14px;border-bottom:2px solid var(--ink);text-align:left;vertical-align:top;overflow-wrap:anywhere}
+table.t th{background:var(--ink);font:400 20px/1.2 Bangers;letter-spacing:.6px;color:var(--white)}
+table.t tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font:800 13px/1.2 Nunito;letter-spacing:.02em;border:2px solid var(--ink);border-radius:6px;padding:5px 10px;vertical-align:2px;background:var(--paper);color:var(--ink)}
+.tag.age{background:var(--lime)}
+.tag.move{background:var(--orange)}
+.tag.host{background:#EBDDFB}
+.tag.mine{background:var(--yellow)}
+.acts{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.acts a{display:block;text-decoration:none;color:inherit;overflow:hidden;transition:transform .15s}
+.acts a:hover{transform:translateY(-3px)}
+.acts img{width:100%}
+.acts div{padding:12px 16px 16px}
+.acts h3{margin:0 0 4px}
+.acts p{margin:0;font-size:14.5px;color:var(--soft)}
+.board{grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))}
+.frame{overflow:hidden;border-radius:0}
+.frame .cap{padding:12px 18px 18px;font-size:15.5px;line-height:1.5}
+.frame .cap h3{margin:0 0 6px;font-size:21px;display:flex;gap:10px;align-items:center}
+.frame .cap h3 b{flex:none;width:32px;height:32px;border:2px solid var(--ink);border-radius:50%;background:var(--red);color:var(--white);font:700 17px/28px Fredoka;text-align:center}
+.frame .cap p{margin:0 0 6px}
+.say{font:700 18px/1.4 'Comic Neue';color:var(--ink)}
+.frame .say{background:var(--paper);padding:8px 12px;border:2px solid var(--ink);border-radius:20px}
+.bts,.frame .bts{color:var(--soft);font-size:14.5px}
+.ask{padding:22px 22px 10px 18px;border-top:12px solid var(--red)}
+ol.q{padding-left:26px;margin:0}
+ol.q li{margin-bottom:12px}
+.toc{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.toc a{font:800 15px/1.2 Nunito;text-decoration:none;color:var(--ink);background:var(--white);border:2px solid var(--ink);border-radius:6px;padding:9px 14px;box-shadow:3px 3px 0 var(--ink)}
+.foot{margin-top:50px;font-size:14px;color:var(--soft)}
+.funbox .card h3{font-size:20px;margin:0 0 4px}
+.funbox .card p{margin:0;font-size:15.5px;line-height:1.45}
+details.more{margin:14px 0}
+details.more summary{cursor:pointer;font:800 17px/1.3 Nunito;color:var(--deep);padding:8px 0}
+.swatches{grid-template-columns:repeat(auto-fill,minmax(min(100%,118px),1fr));gap:12px;margin:14px 0}
+.swatches div{border:3px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--white);box-shadow:3px 3px 0 var(--ink);font-size:13.5px;line-height:1.3}
+.swatches i{display:block;height:56px;border-bottom:3px solid var(--ink);background-image:radial-gradient(circle,rgba(27,27,47,.16) 2px,transparent 2.5px);background-size:10px 10px}
+.swatches span{display:block;padding:7px 10px}
+.cast{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.cast .card{display:flex;gap:14px;align-items:flex-start}
+.cast .card img{width:92px;flex:none;border:3px solid var(--ink)}
+.cast .card h3{margin:0 0 4px}
+.cast .card p{margin:0 0 4px;font-size:15px;line-height:1.45}
+.moves,.powers{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:14px;margin:16px 0}
+.moves .card,.powers .card{padding:14px 16px}
+.moves .ic,.powers .ic{font-size:30px;line-height:1;margin-bottom:6px}
+.moves h3,.powers h3{margin:0 0 4px;font-size:20px}
+.moves p,.powers p{margin:0 0 4px;font-size:15px;line-height:1.45}
+.alt,.moves .alt,.powers .alt{color:var(--soft);font-size:14px}
+.big3 .card{text-align:left}
+.big3 .card .ic{font-size:36px}
+.num{font:700 1em/1 Fredoka}
+.issue{width:210px;max-width:100%;aspect-ratio:2/3;display:flex;flex-direction:column;background:var(--yellow)}
+.issue>img,.issue>a{flex:1;min-height:0;object-fit:cover}
+.issue figcaption{margin-top:auto;background:var(--paper);border-top:3px solid var(--ink);font-family:'Comic Neue';font-weight:700}
+.strip{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0}
+.strip>img,.strip>figure{flex:1 1 150px;min-width:0;max-width:100%;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);object-fit:cover}
+.strip>img{width:0;align-self:flex-start}
+@media(max-width:600px){
+  .page{padding:0 18px 60px}
+  header.hero{padding-top:28px}
+  section{margin-top:36px}
+  .two,.three,.four,.acts,.board,.cast,.moves,.powers,.swatches{grid-template-columns:minmax(0,1fr)}
+  .strip{display:grid;grid-template-columns:minmax(0,1fr)}
+  .strip>img{width:100%}
+  .strip>figure{width:100%}
+  .card{padding:16px}
+  .cast .card{flex-wrap:wrap}
+  table.t th,table.t td{padding:8px}
+  .ask{padding:18px 16px 8px}
+}
+@media(prefers-reduced-motion:reduce){.acts a{transition:none}}

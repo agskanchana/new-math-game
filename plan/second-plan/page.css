@@ -1,0 +1,101 @@
+/* THE SECOND PLAN's pages (docs/plan/second-plan*.html): the same parts as the first plan's pages (hero, card, figure,
+   table, board…), dressed as paper: cream paper with grain, cards like cut card with soft shadows, washi tape on
+   pictures, tickets for tags, an envelope for the questions. Readable from 390px phones to wide screens. */
+@font-face{font-family:Bricolage;src:url(fonts/bricolage.ttf);font-weight:200 800}
+@font-face{font-family:Atkinson;src:url(fonts/atkinson.ttf);font-weight:400}
+@font-face{font-family:Atkinson;src:url(fonts/atkinson-bold.ttf);font-weight:700}
+@font-face{font-family:Atkinson;src:url(fonts/lexend.ttf);font-weight:400;unicode-range:U+0030-0039}   /* digits: Lexend, a plain round 0 */
+@font-face{font-family:Atkinson;src:url(fonts/lexend.ttf);font-weight:700;unicode-range:U+0030-0039}
+:root{--ink:#23325C;--soft:#5E6585;--line:#E9DFCC;--bg:#F6EFE2;--card:#FFFDF8;--tomato:#E4573D;--marigold:#F2B33D;
+  --teal:#1E9488;--leaf:#5A9E4B;--blush:#F3B0A6;--lilac:#B8A5DA;--kraft:#C7A06F;--pick:#FFF0C9}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg) url(mock/grain.png);background-blend-mode:multiply;color:var(--ink);
+  font:16px/1.6 Atkinson,system-ui,sans-serif}
+a{color:var(--tomato)}
+img{max-width:100%;height:auto;display:block}
+.page{max-width:1120px;margin:0 auto;padding:0 16px 80px}
+header.hero{padding:40px 0 18px}
+.crumb{font:700 14px/1.3 Atkinson;color:var(--soft);margin-bottom:10px}
+h1{font:800 clamp(34px,5.4vw,56px)/1.02 Bricolage,system-ui;letter-spacing:-.01em;margin:0 0 12px}
+h2{font:800 clamp(27px,3.8vw,38px)/1.08 Bricolage,system-ui;letter-spacing:-.005em;margin:0 0 10px}
+h3{font:800 22px/1.15 Bricolage,system-ui;margin:18px 0 6px}
+p{margin:0 0 12px}
+.lede{font-size:19px;line-height:1.55;max-width:840px}
+.soft{color:var(--soft)}
+.small{font-size:14px}
+section{margin:50px 0 0;padding-top:4px}
+/* the eyebrow: a little paper ticket */
+.eyebrow{display:inline-block;font:700 12px/1 Atkinson;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--tomato);
+  padding:7px 12px 7px 14px;margin-bottom:12px;clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
+figure{position:relative;margin:0;background:var(--card);border-radius:6px;box-shadow:0 1px 0 rgba(90,60,20,.08),0 10px 24px rgba(90,60,20,.13)}
+figure>img,figure>a>img{width:100%;border-radius:6px 6px 0 0}
+/* washi tape on the top corners of a big picture */
+figure.shot::before,figure.shot::after{content:"";position:absolute;top:-10px;width:110px;height:26px;opacity:.86;z-index:1;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 8px,rgba(255,255,255,0) 8px 16px),var(--marigold)}
+figure.shot::before{left:18px;transform:rotate(-4deg)}
+figure.shot::after{right:18px;transform:rotate(3deg);background:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 8px,rgba(255,255,255,0) 8px 16px),var(--teal)}
+figcaption{padding:12px 16px 14px;font-size:15px;line-height:1.5;color:var(--soft)}
+figcaption b{color:var(--ink)}
+.shot{margin:22px 0 16px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;margin:18px 0}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin:18px 0}
+.card{background:var(--card);border-radius:6px;padding:16px 18px;box-shadow:0 1px 0 rgba(90,60,20,.08),0 8px 20px rgba(90,60,20,.1)}
+.card h3{margin-top:0}
+.card ul{margin:6px 0 0;padding-left:20px}
+.card li{margin-bottom:4px}
+.note{background:#E3F2EF;border-left:6px solid var(--teal);border-radius:4px;padding:12px 16px;margin:16px 0}
+.pickbox{background:var(--pick);border-left:6px solid var(--marigold);border-radius:4px;padding:12px 16px;margin:16px 0}
+.wrap{overflow-x:auto;margin:14px 0;border-radius:6px;box-shadow:0 8px 20px rgba(90,60,20,.1)}
+table.t{border-collapse:collapse;width:100%;background:var(--card);font-size:15px;line-height:1.45}
+table.t th,table.t td{padding:10px 12px;border-bottom:1px dashed var(--line);text-align:left;vertical-align:top}
+table.t th{background:#F3E7D2;font:700 14px/1.2 Atkinson;color:var(--ink)}
+table.t td.num{text-align:right;white-space:nowrap}
+.tag{display:inline-block;font:700 12px/1 Atkinson;letter-spacing:.03em;border-radius:3px;padding:5px 8px;vertical-align:2px}
+.tag.mine{background:var(--marigold);color:#5A3A00}
+.tag.eng{background:#E4DCF4;color:#4B3A80}
+.tag.age{background:#DCEFD6;color:#2F6A25}
+.tag.new{background:var(--tomato);color:#fff}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin:18px 0}
+.acts a{display:block;text-decoration:none;color:inherit;background:var(--card);border-radius:6px;overflow:hidden;
+  box-shadow:0 8px 20px rgba(90,60,20,.12);transition:transform .15s}
+.acts a:hover{transform:rotate(-1deg) translateY(-2px)}
+.acts div{padding:10px 14px 14px}
+.acts h3{margin:0 0 4px}
+.acts p{margin:0;font-size:14px;color:var(--soft)}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:18px;margin:18px 0}
+.frame{background:var(--card);border-radius:6px;overflow:hidden;box-shadow:0 8px 20px rgba(90,60,20,.12)}
+.frame .cap{padding:12px 16px 16px;font-size:15px;line-height:1.5}
+.frame .cap h3{margin:0 0 6px;font-size:20px;display:flex;gap:10px;align-items:center}
+.frame .cap h3 b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tomato);color:#fff;font:800 16px/30px Atkinson;text-align:center}
+.frame .cap p{margin:0 0 6px}
+.frame .say{color:var(--teal)}
+.frame .bts{color:var(--soft);font-size:14px}
+/* the questions: a letter in an envelope */
+.ask{position:relative;background:var(--card);border-radius:4px;padding:26px 22px 10px 16px;box-shadow:0 10px 26px rgba(90,60,20,.14);
+  border-top:10px solid transparent;border-image:repeating-linear-gradient(135deg,var(--tomato) 0 14px,var(--card) 14px 22px,var(--teal) 22px 36px,var(--card) 36px 44px) 10}
+ol.q{padding-left:24px;margin:0}
+ol.q li{margin-bottom:10px}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.toc a{font:700 14px/1 Atkinson;text-decoration:none;color:var(--ink);background:var(--card);border-radius:3px;padding:9px 13px;
+  box-shadow:0 2px 0 rgba(90,60,20,.12)}
+.foot{margin-top:50px;font-size:13px;color:var(--soft)}
+.frame code,.card code,td code{overflow-wrap:anywhere}
+.funbox{margin:18px 0 0}
+.funbox .card h3{font-size:19px;margin:0 0 4px}
+.funbox .card p{margin:0;font-size:15px;line-height:1.45}
+details.more{margin:14px 0}
+details.more summary{cursor:pointer;font:700 16px/1.3 Atkinson;color:var(--tomato);padding:8px 0}
+/* the palette swatches and the cast line-up */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,120px),1fr));gap:10px;margin:14px 0}
+.swatches div{border-radius:4px;overflow:hidden;background:var(--card);box-shadow:0 4px 12px rgba(90,60,20,.1);font-size:13px;line-height:1.3}
+.swatches i{display:block;height:54px}
+.swatches span{display:block;padding:6px 9px}
+.cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin:18px 0}
+.cast .card{display:flex;gap:14px;align-items:flex-start}
+.cast .card img{width:96px;flex:none;filter:drop-shadow(0 6px 6px rgba(90,60,20,.22))}
+.cast .card h3{margin:0 0 4px}
+.cast .card p{margin:0 0 4px;font-size:14.5px;line-height:1.45}
+.verbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px;margin:14px 0}
+.verbs div{background:var(--card);border-radius:4px;padding:10px 12px;font-size:14px;line-height:1.4;box-shadow:0 3px 10px rgba(90,60,20,.08)}
+.verbs b{display:block;font:800 17px/1.2 Bricolage;color:var(--ink);margin-bottom:2px}

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How It Works</title>
+<link rel="stylesheet" href="the-plan/page.css">
+</head><body><div style="max-width:1120px;margin:0 auto;padding:12px 16px 0;font:700 14px/1.3 system-ui,sans-serif"><a href="../index.html" style="display:inline-block;padding:7px 14px;border-radius:999px;background:#3B2A4A;color:#fff;text-decoration:none">← All plans</a></div><div class="page">
+
+<header class="hero">
+  <div class="crumb"><a href="the-plan.html">← The plan</a> · The technical side · 13 October 2026</div>
+  <h1>How it works: the technical side</h1>
+  <p class="lede">You asked to keep the technical side separate. This page is for whoever builds the app: how the characters
+  move, which tool makes them, how a screen is put together, how scenes move, and the timings that keep play quick.
+  The plan itself stays in plain words.</p>
+  <nav class="toc"><a href="#rig">How the characters move</a><a href="#limbs">Arms and legs that come and go</a>
+    <a href="#tools">Which tool</a><a href="#layers">How a screen is built</a><a href="#scroll">Scenes that move</a>
+    <a href="#timing">Timings</a><a href="#numbers">How much to make</a></nav>
+</header>
+
+<section id="rig">
+<span class="eyebrow">1 · How the characters move</span>
+<h2>Rigged characters: easy to animate</h2>
+<p>A character whose legs stay still while its eyes follow your finger and its hands and mouth move a little is a
+<b>rigged</b> character. The drawing is cut into parts (head, eyes, mouth, arms, legs) and the app moves a few joints
+smoothly every frame. There is no frame-by-frame drawing, so the files stay small.</p>
+<figure class="shot"><img src="the-plan/m-rig.jpg" alt="The girl with her skeleton drawn over her, and the same skeleton inside the bear, the triangle and a caterpillar">
+<figcaption><b>The trick that makes "several characters" easy:</b> every character has the <b>same joints with the same names</b>.
+Moves are made once (wave, cheer, think, worried, surprised, nod, shake, jump, point, eat, talk) and every character can do
+them. A new character is new drawings on the same skeleton. The caterpillars have a chain of joints, one per ball.</figcaption></figure>
+<div class="two">
+  <figure><img src="the-plan/img/rig-parts.jpg" alt="The girl drawn as a cut-out kit: head without a face, hair pieces, eyes, mouth shapes, shirt, arms, hands, shorts, legs, shoes">
+  <figcaption><b>The cut-out kit</b> an artist hands over. Gemini drew this draft and it is close (one hair piece wrongly has
+  eyes), so an artist cleans up the final parts. Clothes are drawn on the same body, so they fit.</figcaption></figure>
+  <figure><img src="the-plan/img/faces.jpg" alt="The girl's face in eight expressions">
+  <figcaption><b>Faces</b>: calm, laughing, thinking, worried, surprised, talking, winking, proud. In the rig these are
+  eyebrow, eye and mouth positions, so they blend smoothly into each other.</figcaption></figure>
+</div>
+<figure class="shot"><img src="the-plan/img/pose-bear.jpg" alt="The bear in four poses: hungry, eating, cheering, surprised">
+<figcaption><b>Poses for the storyboards</b>: Gemini drew each friend in four poses so the storyboards feel alive. In the app these
+are not separate drawings but rig moves: <i>hungry</i>, <i>eat</i>, <i>cheer</i>, <i>surprised</i>.</figcaption></figure>
+<div class="wrap"><table class="t">
+<tr><th>Always on (the "alive" layer)</th><th>Moves the activities ask for</th><th>Talking</th></tr>
+<tr><td>Breathing, blinking, eyes and head following the finger, hair, ears and tails that spring, a small sway. Legs stay put.</td>
+<td>The activity code says <code>play('cheer')</code>, <code>mood('worried')</code>, <code>lookAt(apple)</code>. The same call works on every character.</td>
+<td>The mouth follows the voice. Duolingo does exactly this with Rive: the timing of the words comes with the sound.</td></tr>
+</table></div>
+</section>
+
+<section id="limbs">
+<span class="eyebrow">2 · Arms and legs that come and go</span>
+<h2>Living shapes: limbs only while moving</h2>
+<p>Your note on Shape Builders ("when put into places the arm and legs should be retracted so its not strange") became a rule
+for every living shape. A shape is three kinds of parts: its exact body (so sides and corners can be counted), a face, and arms
+and legs. While it waits or once it is placed, the arms and legs are tucked away. To walk, hop, catch or cheer, they slide out.
+Riding in a wagon or a basket, only the arms come out.</p>
+<figure class="shot"><img src="the-plan/sb/living-1.jpg" alt="A blue square in six poses (tucked, walk, hop, catch, cheer, wave), the seven living shapes, and two placed shapes with no limbs">
+<figcaption>The shapes in the storyboards are drawn by code exactly like this (<code>docs/plan/the-plan/mock/fun.js</code>,
+<code>living()</code>): a body, a face that can move and shrink (out of the way of a window or a door), and limbs with poses.
+When a shape is turned (a square standing on a corner), only its body turns: the face and the limbs stay upright. A rig in Rive
+or Spine does the same with a "limbs" input and a scale or slide on the limb bones.</figcaption></figure>
+</section>
+
+<section id="tools">
+<span class="eyebrow">3 · Which tool</span>
+<h2>Three ways to build the rigs</h2>
+<div class="wrap"><table class="t">
+<tr><th></th><th>Rive <span class="tag mine">my pick</span></th><th>Spine</th><th>Our own code rig</th></tr>
+<tr><td><b>What it is</b></td><td>An editor made for interactive characters. A "state machine" switches moods and moves; eyes following the pointer is built in.</td>
+  <td>The classic tool for game characters, made from pictures. Its "skins" are made for mix-and-match outfits.</td>
+  <td>Parts as SVG drawings and a small skeleton written in code (the living shapes on this page already work this way).</td></tr>
+<tr><td><b>Who animates</b></td><td>An animator (freelance) or you, in the editor. Rive also has an AI helper in the editor.</td><td>An animator.</td>
+  <td>Me, in code, with no special editor.</td></tr>
+<tr><td><b>Dress-up</b></td><td>One picture per slot (hat, top, shoes), swapped from the app.</td><td>Skins: excellent.</td>
+  <td>Slots in code; colours can change freely (skin, hair, clothes).</td></tr>
+<tr><td><b>Runs on</b></td><td>Web, iPhone, Android, Flutter, React Native, Unity. Free, open-source players.</td><td>Most game engines and the web.</td><td>Web (and phone apps through it).</td></tr>
+<tr><td><b>Cost</b></td><td>$9 per editor seat a month to export without Rive's splash screen. No fees for the app.</td>
+  <td>$69 or $369 once per person, and a licence is needed to ship.</td><td>Free. We maintain it ourselves.</td></tr>
+<tr><td><b>Best for</b></td><td>The best-looking motion with the least code.</td><td>Big games with many outfits.</td><td>Doing everything with AI and no animator.</td></tr>
+</table></div>
+<div class="pickbox"><b>My pick: Rive.</b> Make <b>one master rig</b> (the avatar) first. Every other character copies its joints and its few
+inputs: where to look, mood, talking, which move, and (for living shapes) limbs out or tucked. That way the activities never need to
+know which character is on screen. One freelance Rive animator can rig the master and then the friends. The art comes first (Gemini
+drafts, then an artist's clean parts). If the client wants no animator at all, we fall back to our own code rig.</div>
+<p class="small soft">Checked 13 Oct: rive.app/pricing (Free exports show a splash, Cadet $9/seat/month, Voyager $32), Rive's docs on pointer
+listeners and image data binding, esotericsoftware.com (Spine $69 Essential, $369 Professional, per person), Duolingo's blog on its Rive lip-sync.</p>
+</section>
+
+<section id="layers">
+<span class="eyebrow">4 · How a screen is built</span>
+<h2>Four layers, and only one is a picture</h2>
+<figure class="shot"><img src="the-plan/m-layers.jpg" alt="An activity screen split into four layers: background, rigged character, game pieces, buttons and voice">
+<figcaption><b>Every screen is four layers.</b> Only the bottom one is a picture. The pieces are placed by code from the question, so one
+screen makes hundreds of questions, and a test robot can play every one.</figcaption></figure>
+<p>An <b>engine</b> is one way of playing (count out, join and split, sort, trace…). An <b>activity</b> is an engine plus its numbers plus one of the
+skill's five steps, with a friend and a scene to give it a look. There are 42 engines, and each has a scene that moves
+(the table is on the plan page).</p>
+<p><b>The test robot.</b> Every engine has a robot that plays every activity the way a child would: it works the answer out from the question
+(never from the app's own answer), makes the planned mistakes on purpose to check each tip, and checks where every move landed.</p>
+</section>
+
+<section id="scroll">
+<span class="eyebrow">5 · Scenes that move</span>
+<h2>Wide and tall worlds, and a camera</h2>
+<p>A scene is a picture bigger than the screen: very wide (21:9) for sideways journeys, or very tall (9:16) for climbs and dives.
+The screen is a window onto it. Everything placed in the scene (friends, things, shapes) is placed in the scene's own coordinates, so
+the window can slide without anything moving out of place.</p>
+<figure class="shot"><img src="the-plan/m-scroll.jpg" alt="The Tidy-Up Train's wide house with three view rectangles, and the Balloon Tower's tall field with three view rectangles">
+<figcaption><b>The view's rectangles</b>, exactly where the storyboards put them. Left: the Tidy-Up Train slides sideways through the house
+(frames 1–3, 4, 5–6). Right: the Balloon Tower climbs (frames 1–3, 4, 6); the tower and its platforms are drawn by code on top.</figcaption></figure>
+<div class="wrap"><table class="t">
+<tr><th>Move</th><th>When</th><th>Activities</th></tr>
+<tr><td><b>Sideways</b></td><td>Successive orders, rooms, crossings or deliveries.</td><td>Pancake Café, Tidy-Up Train, Caterpillar Bridges</td></tr>
+<tr><td><b>Up (or down)</b></td><td>Something growing or climbing; going deeper.</td><td>Shape Builders, Balloon Tower, Firework Numbers, the Dive</td></tr>
+<tr><td><b>None</b></td><td>Comparisons, arrays, fractions, scales, clocks, grids and written work: everything needed must stay in view.</td><td>Owl's Fraction Race, Fact Flow's question area</td></tr>
+</table></div>
+<p>Rules: the view moves only <b>after</b> a round is finished, in 0.6–0.9 seconds; finished work stays in the world
+(a tidy room stays tidy); the next part of the scene already holds its task (it never arrives empty); the finale shows the whole thing at once.</p>
+</section>
+
+<section id="timing">
+<span class="eyebrow">6 · Timings</span>
+<h2>Keeping play quick</h2>
+<div class="wrap"><table class="t">
+<tr><th>What</th><th class="num">How long</th></tr>
+<tr><td>Anything moves after a tap or a drop</td><td class="num">within 0.1 s</td></tr>
+<tr><td>A pancake flips; a shape hops or catches</td><td class="num">0.4–0.8 s</td></tr>
+<tr><td>A reward movement at the end of a round (eat, toot, lift off)</td><td class="num">1–2 s</td></tr>
+<tr><td>A counted show (fireworks, balls counting themselves)</td><td class="num">up to 4 s</td></tr>
+<tr><td>The view sliding to the next part</td><td class="num">0.6–0.9 s</td></tr>
+<tr><td>A round of play</td><td class="num">18–26 s</td></tr>
+<tr><td>An activity (5 rounds)</td><td class="num">90–150 s</td></tr>
+<tr><td>The finale, then Continue</td><td class="num">2–3 s</td></tr>
+<tr><td>Fact Flow: one boost</td><td class="num">0.25 s</td></tr>
+</table></div>
+<p class="small soft">Proposals, not measured: to be checked with children. Taps made during an animation are queued,
+never lost.</p>
+</section>
+
+<section id="numbers">
+<span class="eyebrow">7 · How much to make</span>
+<h2>What the scenes add to the work</h2>
+<div class="wrap"><table class="t">
+<tr><th></th><th class="num">First pilot</th><th class="num">Pilot + tracing</th><th class="num">Everything</th></tr>
+<tr><td>Engines</td><td class="num">12</td><td class="num">13</td><td class="num">42</td></tr>
+<tr><td>Activities</td><td class="num">250</td><td class="num">270</td><td class="num">2,815</td></tr>
+<tr><td>Background pictures</td><td class="num">10</td><td class="num">11</td><td class="num">16</td></tr>
+<tr><td>Drawn things (props)</td><td class="num">44</td><td class="num">45</td><td class="num">84</td></tr>
+<tr><td>Character moves and moods</td><td class="num">15</td><td class="num">15</td><td class="num">18</td></tr>
+<tr><td>Voice lines (per language)</td><td class="num">337</td><td class="num">359</td><td class="num">1,390</td></tr>
+<tr><td>Daily card designs</td><td class="num">31</td><td class="num">31</td><td class="num">31</td></tr>
+</table></div>
+<p class="small soft">Estimates to revise after two scenes are built and tried with children. Scenes are shared: a café serves five engines, a garden
+several, a workshop most of the tools. Numbers, dots, bars and grids are drawn by code and are not counted as props.</p>
+<p class="foot"><a href="the-plan.html">← Back to the plan</a></p>
+</section>
+
+</div></body></html>

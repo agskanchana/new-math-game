@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clay Bay · technical</title>
+<link rel="stylesheet" href="fourth-plan/page.css">
+</head><body><div style="max-width:1120px;margin:0 auto;padding:12px 16px 0;font:700 14px/1.3 system-ui,sans-serif"><a href="../index.html" style="display:inline-block;padding:7px 14px;border-radius:999px;background:#3B2A4A;color:#fff;text-decoration:none">← All plans</a></div><div class="page">
+<header class="hero">
+  <div class="crumb"><a href="fourth-plan.html">← Clay Bay</a> · The technical side</div>
+  <h1>How Clay Bay would be built</h1>
+  <p class="lede">The learning engine is the first plan's (the skill map, five steps for every skill, the feedback rules, stars for first tries,
+  reviews, the parents' page; see its <a href="technical.html">technical page</a>). This page covers what is new here: the clay look, the
+  hands-on moves, how answers are checked and what is saved.</p>
+</header>
+<section><span class="eyebrow">1 · The clay look</span><h2>Three layers of clay</h2>
+<div class="wrap"><table class="t"><tr><th>What</th><th>How it is made</th><th>Why</th></tr><tr><td>Scenes</td><td>Painted pictures (Gemini drafts now; an illustrator or cleaned-up drafts later), one per place, with soft parallax layers where needed.</td><td>Rich clay texture costs nothing at run time: it is just a picture.</td></tr><tr><td>Characters</td><td>Each friend and the avatar is drawn as separate lumps (body, eyes, pupils, arms, legs, clothes) and rigged in Rive with bones and soft mesh bending.</td><td>Clay figures are built from lumps anyway, so they come apart cleanly; squash and stretch suit clay.</td></tr><tr><td>The maths</td><td>Shapes, critters, cakes, weights, number lines and digits are drawn by the app, with one shared "clay" shading (a soft rounded edge, a fingerprint texture, a highlight and a shadow).</td><td>Counts and sizes must be exact and change every round; drawing them keeps them exact.</td></tr></table></div>
+<div class="two">
+<figure class="shot"><img src="fourth-plan/m-claycode.jpg" alt="Clay shapes drawn by the app: a triangle, a square, two halves, numbered weights, a three-eyed critter, the number 347" loading="lazy"><figcaption><b>The app's own clay.</b> In these mock-ups the shading is an SVG filter; in the app it would be a small graphics shader, so it stays smooth on cheap tablets.</figcaption></figure>
+<figure class="shot"><img src="fourth-plan/sb/extras-3.jpg" alt="Pom taken apart into eleven clay pieces, and assembled with pins at the joints" loading="lazy"><figcaption><b>The rig.</b> Pom is eleven lumps, each turning at a pin. His pupils follow the child's finger; his body squashes when he lands.</figcaption></figure>
+</div>
+<div class="card"><h3>The stop-motion feel</h3><ul>
+<li>Characters move on twelve steps a second, like real stop-motion, while the screen itself stays smooth (60 a second) so touches feel instant.</li>
+<li>A gentle "boil": two or three slightly different fingerprint textures swap now and then, so the clay looks hand-made.</li>
+<li>Every touch leaves a soft dent that slowly fills back in. It is drawn on a light layer over the scene and costs very little.</li>
+<li>Reduced motion (a setting): no boil, no camera moves, dents fade at once.</li></ul></div>
+</section>
+<section><span class="eyebrow">2 · Touch</span><h2>Eight moves, each with a one-finger way</h2>
+<div class="wrap"><table class="t"><tr><th>Move</th><th>How it is recognised</th><th>One-finger way</th></tr><tr><td>Press with several fingertips</td><td>Touches that land within 0.3 seconds count as one press; touches closer than 8 mm merge; a large contact (a palm) is ignored.</td><td>tap one at a time</td></tr><tr><td>Pull out</td><td>A drag that starts on the clay's edge and moves outward more than 20 px.</td><td>the same drag with a mouse</td></tr><tr><td>Rub smooth</td><td>Three or more back-and-forth strokes over a corner.</td><td>tap the corner</td></tr><tr><td>Swipe to cut</td><td>A quick straight stroke across the whole object; the cut follows the best straight line through it.</td><td>drag a cut line, or tap two guide dots</td></tr><tr><td>Squish / pinch apart</td><td>Dropping one piece onto another joins them; two fingers spreading on a piece splits it.</td><td>drag one onto the other; tap and choose a split</td></tr><tr><td>Stretch a corner</td><td>A drag on a block's corner handle snaps to whole rows and columns.</td><td>+ and − buttons</td></tr><tr><td>Twist</td><td>Two touches turning around their middle; snaps to quarter turns.</td><td>the ↻ button</td></tr><tr><td>Pinch to zoom</td><td>Two touches moving apart or together; marks appear when they are at least 24 px apart.</td><td>+ and − buttons, arrows</td></tr></table></div>
+<div class="note"><b>Fingers at once:</b> most tablets read 10 touches at once (iPads 11); some cheap phones only 5; a laptop with a mouse reads one.
+Poke Pals asks for at most 5 per hand and always accepts one at a time, so it works everywhere. The client's real devices should be tested in the first week.</div>
+</section>
+<section><span class="eyebrow">3 · Checking answers</span><h2>The world checks, by exact rules</h2>
+<div class="wrap"><table class="t"><tr><th>Activity</th><th>The check</th><th>Tolerance</th></tr><tr><td>Poke Pals</td><td>number of Peeps = number of seats</td><td>exact</td></tr><tr><td>Pull-a-Shape</td><td>corners counted as turns sharper than 20°; side lengths in dot spaces</td><td>exact on the dots</td></tr><tr><td>Critter Maker</td><td>parts counted by kind against the card</td><td>exact</td></tr><tr><td>Seesaw Twins</td><td>left total = right total; the tilt grows with the difference, up to 12°</td><td>exact</td></tr><tr><td>Parade Squares</td><td>rows × columns = number; no empty squares, nobody left over</td><td>exact</td></tr><tr><td>Fair Slices</td><td>pieces' areas compared after the cut</td><td>within 5% (10% at age 7)</td></tr><tr><td>Zoom Dig</td><td>dig position against the target</td><td>within half a mark at the current zoom</td></tr><tr><td>Roll-a-Giant</td><td>answer and time per fact</td><td>shiny: first try, ≤ 3 s (4 s Grade 1), on 3 different days</td></tr></table></div></section>
+<section><span class="eyebrow">4 · What is saved</span><h2>Small recipes, not pictures</h2>
+<div class="three">
+<div class="card"><h3>A critter</h3><p>Its body shape, colour and the number of each part, plus a name: a few dozen bytes. The app draws it again from
+the recipe, so a bay can hold hundreds.</p></div>
+<div class="card"><h3>The day</h3><p>Which stops are done, the egg's warm stones, the Hatch's answers and points, today's hatchling recipe, and any
+half-done question exactly as it was.</p></div>
+<div class="card"><h3>Speed</h3><p>Every fact's last ten answers and times (for the Scale Coat), and one number per day for Giants' Row.</p></div>
+</div></section>
+<section><span class="eyebrow">5 · Test robots</span><h2>Every activity plays itself</h2>
+<p>Each activity has a test robot that reads the question (never the answer stored in the code), makes the moves a child would (including
+several-finger presses, pinches and swipes), checks where everything landed, and makes one planned mistake per session to check the tip.
+The robots run on every change, at every age.</p>
+<p class="foot"><a href="fourth-plan.html">← Back to Clay Bay</a></p></section>
+</div></body></html>

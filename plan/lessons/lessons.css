@@ -60,6 +60,9 @@ table.heat td.zero{color:#C9B9A3;background:#FBF5EA}
 .badge-new,.badge-kept{font:700 12px/1 Fredoka;border-radius:999px;padding:5px 9px;vertical-align:3px}
 .badge-new{background:var(--yellow);color:#5A3A00}
 .badge-kept{background:#DDF0D2;color:#2F6A25}
+.badge-out{font:700 12px/1 Fredoka;border-radius:999px;padding:5px 9px;vertical-align:3px;background:#EFE4D1;color:#8A6E55}
+.actgrid a.out{opacity:.55}
+.actgrid a.out:hover{opacity:.85}
 /* the coverage matrix */
 table.mx{border-collapse:separate;border-spacing:3px;width:100%;font-size:14px}
 table.mx th{font:700 12.5px/1.1 Fredoka;color:var(--soft);padding:4px 2px;vertical-align:bottom}

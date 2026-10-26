@@ -1,0 +1,115 @@
+/* THE LESSONS PLAN's pages (docs/plan/lessons*.html; made by tools/make_lessons_pages.py) on top of fourth-plan/page.css */
+.sic{display:inline-block;vertical-align:middle;flex:none}
+.topic{display:inline-flex;align-items:center;gap:7px;padding:4px 12px 4px 4px;border-radius:999px;font:700 15px/1.15 Fredoka;color:var(--ink);
+  background:color-mix(in srgb,var(--c) 16%,#fff);box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--c) 30%,#fff)}
+.topic.sm{font-size:13.5px;padding:3px 10px 3px 3px;gap:5px}
+.agebar{display:inline-flex;gap:3px;vertical-align:middle}
+.agebar i{font:700 12px/22px Fredoka;font-style:normal;width:22px;height:22px;border-radius:7px;text-align:center;background:#EFE4D1;color:#B3A38F}
+.agebar i.on{background:var(--orange);color:#fff}
+.kicker{font:800 13px/1.2 Nunito;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.hero-img{margin:22px 0 6px}
+.hero-img img{width:100%;border-radius:24px;box-shadow:0 6px 0 var(--edge),0 16px 30px rgba(90,60,20,.16)}
+.big-n{font:700 clamp(44px,7vw,72px)/1 Fredoka;color:var(--deep)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:14px;margin:20px 0}
+.stats .card{text-align:center;padding:16px 12px}
+.stats .card b{display:block;font:700 44px/1 Fredoka;color:var(--deep)}
+.stats .card span{font:800 14.5px/1.3 Nunito;color:var(--soft)}
+/* the tree: maths -> ages -> topics -> lessons -> activities */
+.tree{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:20px 0;align-items:stretch}
+.tree .lvl{position:relative;background:var(--card);border-radius:22px;padding:14px 14px 16px;box-shadow:0 5px 0 var(--edge),0 10px 20px rgba(90,60,20,.1)}
+.tree .lvl:not(:last-child):after{content:"→";position:absolute;right:-13px;top:50%;transform:translate(50%,-50%);font:700 26px Fredoka;color:var(--orange);z-index:2}
+.tree h3{margin:0 0 4px;font-size:20px}
+.tree .n{font:700 34px/1.1 Fredoka;color:var(--deep)}
+.tree p{margin:6px 0 0;font-size:14.5px;line-height:1.45;color:var(--soft)}
+@media (max-width:820px){.tree{grid-template-columns:1fr}.tree .lvl:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-14px;transform:translate(50%,50%)}}
+/* the count table */
+table.heat{border-collapse:separate;border-spacing:4px;width:100%;font-size:15px}
+table.heat th{font:700 13px/1.15 Fredoka;color:var(--soft);vertical-align:bottom;padding:4px 2px;text-align:center}
+table.heat th.row{text-align:left;color:var(--ink);font-size:15px;white-space:nowrap;padding-right:8px}
+table.heat th.row small{display:block;font:800 12px Nunito;color:var(--soft)}
+table.heat td{text-align:center;font:700 17px/1 Fredoka;border-radius:10px;padding:10px 2px;min-width:30px}
+table.heat td.tot,table.heat th.tot{background:#F7E9D2;color:var(--ink)}
+table.heat td.zero{color:#C9B9A3;background:#FBF5EA}
+.heat-wrap{overflow-x:auto;background:var(--card);border-radius:24px;padding:12px;box-shadow:0 6px 0 var(--edge),0 14px 28px rgba(90,60,20,.1);margin:16px 0}
+/* topic cards */
+.topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin:18px 0}
+.topics .card{border-top:8px solid var(--c);padding:14px 18px}
+.topics h3{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.topics p{margin:0 0 6px;font-size:15px;line-height:1.45}
+.topics .meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font:800 13.5px Nunito;color:var(--soft)}
+/* steps of a lesson */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin:18px 0;counter-reset:st}
+.steps .card{position:relative;padding:16px 18px 16px}
+.steps .card:before{counter-increment:st;content:counter(st);position:absolute;right:14px;top:12px;font:700 40px/1 Fredoka;color:#F1E3CC}
+.steps h3{margin:0 0 6px}
+.steps p{margin:0;font-size:15px;line-height:1.45}
+/* the quick rules */
+.quick{background:linear-gradient(135deg,#FFF6D8,#FFE9C4);border-radius:26px;padding:20px 22px;margin:18px 0;box-shadow:inset 0 0 0 3px #F3D27A}
+.quick h3{margin-top:0}
+.quick ul{margin:6px 0 0;padding-left:22px}
+.quick li{margin-bottom:6px}
+/* activity cards */
+.actgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin:18px 0}
+.actgrid a{display:block;text-decoration:none;color:inherit;background:var(--card);border-radius:24px;overflow:hidden;
+  box-shadow:inset 0 2px 0 #fff,0 6px 0 var(--edge),0 14px 28px rgba(90,60,20,.12);transition:transform .15s}
+.actgrid a:hover{transform:translateY(-3px) rotate(-.4deg)}
+.actgrid .body{padding:12px 16px 16px}
+.actgrid h3{margin:0 0 2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.actgrid p{margin:4px 0 8px;font-size:14.5px;line-height:1.45;color:var(--soft)}
+.actgrid .ts{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.badge-new,.badge-kept{font:700 12px/1 Fredoka;border-radius:999px;padding:5px 9px;vertical-align:3px}
+.badge-new{background:var(--yellow);color:#5A3A00}
+.badge-kept{background:#DDF0D2;color:#2F6A25}
+/* the coverage matrix */
+table.mx{border-collapse:separate;border-spacing:3px;width:100%;font-size:14px}
+table.mx th{font:700 12.5px/1.1 Fredoka;color:var(--soft);padding:4px 2px;vertical-align:bottom}
+table.mx th.row{text-align:left;font-size:15px;color:var(--ink);white-space:nowrap;padding-right:8px}
+table.mx th.row a{color:inherit;text-decoration:none}
+table.mx td{text-align:center;padding:0}
+table.mx td span{display:inline-block;min-width:30px;height:30px;line-height:30px;border-radius:50%;font:700 14px/30px Fredoka;color:#fff}
+table.mx td.ages{white-space:nowrap;padding-left:6px}
+/* the ladder (an activity by age) */
+table.ladder td:first-child{white-space:nowrap;font:700 16px/1.2 Fredoka}
+table.ladder td:first-child small{display:block;font:800 12.5px Nunito;color:var(--soft)}
+/* lesson lists (the map page and the activity pages) */
+.lv{margin:30px 0 0}
+.lv>h2{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.lv>h2 small{font:800 16px Nunito;color:var(--soft)}
+.strand{background:var(--card);border-radius:20px;margin:12px 0;padding:12px 16px 14px;border-left:8px solid var(--c);
+  box-shadow:0 4px 0 var(--edge),0 10px 20px rgba(90,60,20,.08)}
+.strand h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:19px}
+.strand h3 small{font:800 13.5px Nunito;color:var(--soft)}
+ol.ls{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:6px 18px}
+ol.ls li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;padding:6px 0;border-bottom:2px dashed #F1E6D3;font-size:15.5px;line-height:1.3}
+ol.ls li b{font:700 16px/1.25 Fredoka}
+ol.ls li code{font:800 12px Nunito;color:var(--soft);background:#F4ECDD;border-radius:6px;padding:2px 6px}
+ol.ls li code.x{background:#E9F3FB;color:#3F6E96}
+ol.ls li .ac{font:800 12.5px Nunito;color:var(--soft)}
+ol.ls li .ac a{color:var(--deep);text-decoration:none}
+ol.ls li .ac a.main{font-weight:900}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;position:sticky;top:0;z-index:5;padding:10px 0;background:var(--bg)}
+@media (max-width:640px){.filters{position:static}}
+.filters button{cursor:pointer;border:0;font:700 14px/1 Fredoka;color:var(--ink);background:var(--card);border-radius:999px;padding:6px 12px 6px 6px;
+  display:inline-flex;align-items:center;gap:6px;box-shadow:0 3px 0 var(--edge)}
+.filters button.on{background:var(--ink);color:#fff}
+.filters button.all{padding-left:12px}
+body.f .strand{display:none}
+body.f .strand.show{display:block}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;margin:12px 0}
+.grown{background:#fff;border-radius:24px;padding:16px 18px;box-shadow:0 6px 0 var(--edge),0 14px 28px rgba(90,60,20,.12);margin:18px 0}
+.grown .row{display:grid;grid-template-columns:minmax(150px,1.2fr) 3fr auto;gap:10px;align-items:center;padding:8px 0;border-bottom:2px solid #F4ECDD}
+.grown .row:last-child{border-bottom:0}
+.grown .bar{height:14px;border-radius:7px;background:#F1E6D3;overflow:hidden}
+.grown .bar i{display:block;height:100%;background:var(--c);border-radius:7px}
+.grown .num{font:700 15px Fredoka;white-space:nowrap}
+@media (max-width:560px){.grown .row{grid-template-columns:1fr auto}.grown .bar{grid-column:1/-1;order:3}}
+.knobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;margin:14px 0}
+.knobs .card{padding:12px 16px}
+.knobs h3{margin:0 0 4px;font-size:18px}
+.knobs p{margin:0;font-size:14.5px;line-height:1.45}
+.sum3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;margin:16px 0}
+.sum3 .card h3{margin:0 0 4px;font-size:18px}
+.sum3 .card p{margin:0;font-size:15px;line-height:1.45}
+.backlink{font:700 15px Fredoka}
+.two.top{align-items:start}
+table.mx td.ages{font:700 15px Fredoka;color:var(--soft)}
